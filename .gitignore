@@ -11,6 +11,9 @@
 # production
 /build
 
+# runtime type definitions
+src/types-ti.ts
+
 # misc
 .DS_Store
 .env.local

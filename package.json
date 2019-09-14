@@ -5,13 +5,16 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "ts-interface-checker": "^0.1.9"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "npm run build-interfaces && react-scripts start",
+    "build": "npm run build-interfaces && react-scripts build",
+    "test": "npm run build-interfaces && react-scripts test --verbose",
+    "eject": "react-scripts eject",
+    "build-interfaces": "ts-interface-builder src/types.ts",
+    "prettier": "prettier --single-quote --write \"src/**/*.{js,jsx,ts,tsx,json,css,scss,md}\""
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +30,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/jest": "^24.0.18",
+    "@types/node": "^12.7.5",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.9.0",
+    "prettier": "^1.18.2",
+    "ts-interface-builder": "^0.2.0",
+    "typescript": "^3.6.3"
   }
 }
