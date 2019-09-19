@@ -3,6 +3,7 @@ import { Breeds, Owners } from './types';
 import typesRuntime from './types-ti';
 import breedData from './data/breed';
 import ownerData from './data/owner';
+import { isBreeds } from './types-smart';
 
 const API_TIMEOUT = 300;
 
@@ -13,7 +14,7 @@ const { Breeds: BreedsChecker, Owners: OwnersChecker } = createCheckers(
 export const fetchBreedData = async (): Promise<Breeds> => {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
-      const isInvalid = BreedsChecker.validate(breedData);
+      const isInvalid = !isBreeds(breedData);
       const isInvalidStrict = BreedsChecker.strictValidate(breedData);
 
       if (isInvalidStrict) {
