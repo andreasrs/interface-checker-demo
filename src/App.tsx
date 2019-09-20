@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Owners, Breeds } from './types';
-import { fetchOwnerData, fetchBreedData } from './dogService';
+import { fetchOwnerData, fetchBreedData } from './dog-service-smart';
 import './App.css';
 
 function App() {

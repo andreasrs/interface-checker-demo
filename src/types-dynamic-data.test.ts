@@ -1,6 +1,6 @@
 import typesRuntime from './types-ti';
 import { createCheckers, Checker } from 'ts-interface-checker';
-import { fetchBreedData, fetchOwnerData } from './dogService';
+import { fetchBreedData, fetchOwnerData } from './dog-service';
 import { Breeds, Owners } from './types';
 
 const typeCheckers = createCheckers(typesRuntime);
